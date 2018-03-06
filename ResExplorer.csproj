@@ -1,0 +1,528 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{65480FF0-4B33-4484-8FA8-DC7944D3974D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <NoStandardLibraries>false</NoStandardLibraries>
+    <AssemblyName>ResourceExplorer</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <AssemblyInfoFilePath>Properties\AssemblyInfo.cs</AssemblyInfoFilePath>
+    <UpdateAssemblyVersion>False</UpdateAssemblyVersion>
+    <UpdateAssemblyFileVersion>False</UpdateAssemblyFileVersion>
+    <UpdateAssemblyInfoVersion>False</UpdateAssemblyInfoVersion>
+    <AssemblyVersionSettings>
+    </AssemblyVersionSettings>
+    <AssemblyFileVersionSettings>
+    </AssemblyFileVersionSettings>
+    <AssemblyInfoVersionSettings>
+    </AssemblyInfoVersionSettings>
+    <PrimaryVersionType>AssemblyInfoVersionAttribute</PrimaryVersionType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Binary\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Binary\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>ResourceExplorer</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>programm.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>ResourceExplorer.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="About.Designer.cs">
+      <DependentUpon>About.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ArchiveViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ArchiveViewer.Designer.cs">
+      <DependentUpon>ArchiveViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Be.Windows.Forms\BuiltInContextMenu.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Be.Windows.Forms\ByteCharConverters.cs" />
+    <Compile Include="Be.Windows.Forms\ByteCollection.cs" />
+    <Compile Include="Be.Windows.Forms\BytePositionInfo.cs" />
+    <Compile Include="Be.Windows.Forms\Caret.cs" />
+    <Compile Include="Be.Windows.Forms\DataBlock.cs" />
+    <Compile Include="Be.Windows.Forms\DataMap.cs" />
+    <Compile Include="Be.Windows.Forms\DynamicByteProvider.cs" />
+    <Compile Include="Be.Windows.Forms\DynamicFileByteProvider.cs" />
+    <Compile Include="Be.Windows.Forms\FileByteProvider.cs" />
+    <Compile Include="Be.Windows.Forms\FileDataBlock.cs" />
+    <Compile Include="Be.Windows.Forms\FindOptions.cs" />
+    <Compile Include="Be.Windows.Forms\HexBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Be.Windows.Forms\HexCasing.cs" />
+    <Compile Include="Be.Windows.Forms\IByteProvider.cs" />
+    <Compile Include="Be.Windows.Forms\MemoryDataBlock.cs" />
+    <Compile Include="Be.Windows.Forms\NativeMethods.cs" />
+    <Compile Include="Be.Windows.Forms\Util.cs" />
+    <Compile Include="DdsFile\DdsFile.cs" />
+    <Compile Include="Extensions\FlexibleMessageBox.cs" />
+    <Compile Include="Extensions\Wwise.cs" />
+    <Compile Include="FileFormats\ArchiveEncryption.cs" />
+    <Compile Include="FileFormats\ArchiveFile.cs" />
+    <Compile Include="FileFormats\ArchiveSerializeOptions.cs" />
+    <Compile Include="FileFormats\Archive\FileHeader.cs" />
+    <Compile Include="FileFormats\Archive\Platform.cs" />
+    <Compile Include="FileFormats\Archive\ResourceEntry.cs" />
+    <Compile Include="FileFormats\Archive\ResourceHeader.cs" />
+    <Compile Include="FileFormats\Archive\ResourceType.cs" />
+    <Compile Include="FileFormats\Hashing\FileHash.cs" />
+    <Compile Include="FileFormats\TEA.cs" />
+    <Compile Include="ManagedBass\Bass.cs" />
+    <Compile Include="ManagedBass\BassException.cs" />
+    <Compile Include="ManagedBass\BASSTimer.cs" />
+    <Compile Include="ManagedBass\Bass\Delegates\DownloadProcedure.cs" />
+    <Compile Include="ManagedBass\Bass\Delegates\DSPProcedure.cs" />
+    <Compile Include="ManagedBass\Bass\Delegates\FileCloseProcedure.cs" />
+    <Compile Include="ManagedBass\Bass\Delegates\FileLengthProcedure.cs" />
+    <Compile Include="ManagedBass\Bass\Delegates\FileReadProcedure.cs" />
+    <Compile Include="ManagedBass\Bass\Delegates\FileSeekProcedure.cs" />
+    <Compile Include="ManagedBass\Bass\Delegates\RecordProcedure.cs" />
+    <Compile Include="ManagedBass\Bass\Delegates\StreamProcedure.cs" />
+    <Compile Include="ManagedBass\Bass\Delegates\SyncProcedure.cs" />
+    <Compile Include="ManagedBass\Bass\Enumerations\Algorithm3D.cs" />
+    <Compile Include="ManagedBass\Bass\Enumerations\BassFlags.cs" />
+    <Compile Include="ManagedBass\Bass\Enumerations\BassInfoFlags.cs" />
+    <Compile Include="ManagedBass\Bass\Enumerations\ChannelAttribute.cs" />
+    <Compile Include="ManagedBass\Bass\Enumerations\ChannelType.cs" />
+    <Compile Include="ManagedBass\Bass\Enumerations\Configuration.cs" />
+    <Compile Include="ManagedBass\Bass\Enumerations\DataFlags.cs" />
+    <Compile Include="ManagedBass\Bass\Enumerations\DeviceInfoFlags.cs" />
+    <Compile Include="ManagedBass\Bass\Enumerations\DeviceInitFlags.cs" />
+    <Compile Include="ManagedBass\Bass\Enumerations\DeviceType.cs" />
+    <Compile Include="ManagedBass\Bass\Enumerations\DSInterface.cs" />
+    <Compile Include="ManagedBass\Bass\Enumerations\DXPhase.cs" />
+    <Compile Include="ManagedBass\Bass\Enumerations\DXWaveform.cs" />
+    <Compile Include="ManagedBass\Bass\Enumerations\EAXEnvironment.cs" />
+    <Compile Include="ManagedBass\Bass\Enumerations\EffectType.cs" />
+    <Compile Include="ManagedBass\Bass\Enumerations\FileStreamPosition.cs" />
+    <Compile Include="ManagedBass\Bass\Enumerations\FXChannelFlags.cs" />
+    <Compile Include="ManagedBass\Bass\Enumerations\InputFlags.cs" />
+    <Compile Include="ManagedBass\Bass\Enumerations\InputTypeFlags.cs" />
+    <Compile Include="ManagedBass\Bass\Enumerations\LevelRetrievalFlags.cs" />
+    <Compile Include="ManagedBass\Bass\Enumerations\Mode3D.cs" />
+    <Compile Include="ManagedBass\Bass\Enumerations\PlaybackState.cs" />
+    <Compile Include="ManagedBass\Bass\Enumerations\PositionFlags.cs" />
+    <Compile Include="ManagedBass\Bass\Enumerations\RecordFormatFlags.cs" />
+    <Compile Include="ManagedBass\Bass\Enumerations\RecordInfoFlags.cs" />
+    <Compile Include="ManagedBass\Bass\Enumerations\StreamProcedureType.cs" />
+    <Compile Include="ManagedBass\Bass\Enumerations\StreamSystem.cs" />
+    <Compile Include="ManagedBass\Bass\Enumerations\SyncFlags.cs" />
+    <Compile Include="ManagedBass\Bass\Enumerations\TagType.cs" />
+    <Compile Include="ManagedBass\Bass\Enumerations\VAMMode.cs" />
+    <Compile Include="ManagedBass\Bass\Enumerations\WaveFormatTag.cs" />
+    <Compile Include="ManagedBass\Bass\PInvoke\3D.cs" />
+    <Compile Include="ManagedBass\Bass\PInvoke\Bass.cs" />
+    <Compile Include="ManagedBass\Bass\PInvoke\Channels.cs" />
+    <Compile Include="ManagedBass\Bass\PInvoke\Config.cs" />
+    <Compile Include="ManagedBass\Bass\PInvoke\CreateStream.cs" />
+    <Compile Include="ManagedBass\Bass\PInvoke\Devices.cs" />
+    <Compile Include="ManagedBass\Bass\PInvoke\FX.cs" />
+    <Compile Include="ManagedBass\Bass\PInvoke\Music.cs" />
+    <Compile Include="ManagedBass\Bass\PInvoke\Plugin.cs" />
+    <Compile Include="ManagedBass\Bass\PInvoke\Record.cs" />
+    <Compile Include="ManagedBass\Bass\PInvoke\Samples.cs" />
+    <Compile Include="ManagedBass\Bass\PInvoke\Streams.cs" />
+    <Compile Include="ManagedBass\Bass\Structures\BassInfo.cs" />
+    <Compile Include="ManagedBass\Bass\Structures\ChannelInfo.cs" />
+    <Compile Include="ManagedBass\Bass\Structures\DeviceInfo.cs" />
+    <Compile Include="ManagedBass\Bass\Structures\FileProcedures.cs" />
+    <Compile Include="ManagedBass\Bass\Structures\PluginFormat.cs" />
+    <Compile Include="ManagedBass\Bass\Structures\PluginInfo.cs" />
+    <Compile Include="ManagedBass\Bass\Structures\RecordInfo.cs" />
+    <Compile Include="ManagedBass\Bass\Structures\SampleInfo.cs" />
+    <Compile Include="ManagedBass\Bass\Structures\Vector3D.cs" />
+    <Compile Include="ManagedBass\BitHelper.cs" />
+    <Compile Include="ManagedBass\ChannelReferences.cs" />
+    <Compile Include="ManagedBass\Effects\Objects\DXChorusEffect.cs" />
+    <Compile Include="ManagedBass\Effects\Objects\DXCompressorEffect.cs" />
+    <Compile Include="ManagedBass\Effects\Objects\DXDistortionEffect.cs" />
+    <Compile Include="ManagedBass\Effects\Objects\DXEchoEffect.cs" />
+    <Compile Include="ManagedBass\Effects\Objects\DXFlangerEffect.cs" />
+    <Compile Include="ManagedBass\Effects\Objects\DXGargleEffect.cs" />
+    <Compile Include="ManagedBass\Effects\Objects\DXParamEQ.cs" />
+    <Compile Include="ManagedBass\Effects\Objects\DXParamEQEffect.cs" />
+    <Compile Include="ManagedBass\Effects\Objects\DXReverbEffect.cs" />
+    <Compile Include="ManagedBass\Effects\Objects\DX_ID3DL2ReverbEffect.cs" />
+    <Compile Include="ManagedBass\Effects\Objects\Effect Base.cs" />
+    <Compile Include="ManagedBass\Effects\Structures\DXChorusParameters.cs" />
+    <Compile Include="ManagedBass\Effects\Structures\DXCompressorParameters.cs" />
+    <Compile Include="ManagedBass\Effects\Structures\DXDistortionParameters.cs" />
+    <Compile Include="ManagedBass\Effects\Structures\DXEchoParameters.cs" />
+    <Compile Include="ManagedBass\Effects\Structures\DXFlangerParameters.cs" />
+    <Compile Include="ManagedBass\Effects\Structures\DXGargleParameters.cs" />
+    <Compile Include="ManagedBass\Effects\Structures\DXParamEQParameters.cs" />
+    <Compile Include="ManagedBass\Effects\Structures\DXReverbParameters.cs" />
+    <Compile Include="ManagedBass\Effects\Structures\DX_ID3DL2ReverbParameters.cs" />
+    <Compile Include="ManagedBass\Errors.cs" />
+    <Compile Include="ManagedBass\Extensions.cs" />
+    <Compile Include="ManagedBass\GCPin.cs" />
+    <Compile Include="ManagedBass\IEffectParameter.cs" />
+    <Compile Include="ManagedBass\MediaPlayer.cs" />
+    <Compile Include="ManagedBass\PlayerControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ManagedBass\PlayerControl.designer.cs">
+      <DependentUpon>PlayerControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagedBass\Resolution.cs" />
+    <Compile Include="ManagedBass\StreamFileProcedures.cs" />
+    <Compile Include="ManagedBass\Tags\Objects\ID3v2\ID3v2Tag.cs" />
+    <Compile Include="ManagedBass\Tags\Objects\ID3v2\PictureTag.cs" />
+    <Compile Include="ManagedBass\Tags\Objects\ID3v2\PictureTypes.cs" />
+    <Compile Include="ManagedBass\Tags\Objects\LookupTables.cs" />
+    <Compile Include="ManagedBass\Tags\Objects\TagProperties.cs" />
+    <Compile Include="ManagedBass\Tags\Objects\TagReader.cs" />
+    <Compile Include="ManagedBass\Tags\Structures\BextTag.cs" />
+    <Compile Include="ManagedBass\Tags\Structures\CACodecTag.cs" />
+    <Compile Include="ManagedBass\Tags\Structures\CartTag.cs" />
+    <Compile Include="ManagedBass\Tags\Structures\ID3v1Tag.cs" />
+    <Compile Include="ManagedBass\Utils.cs" />
+    <Compile Include="ManagedBass\Visuals.cs" />
+    <Compile Include="ManagedBass\WaveFileWriter.cs" />
+    <Compile Include="ManagedBass\WaveFormat.cs" />
+    <Compile Include="Properties\Resources1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ResourceFormats\FlashResource.cs" />
+    <Compile Include="ResourceFormats\GenericResource.cs" />
+    <Compile Include="ResourceViewers\BnkViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ResourceViewers\BnkViewer.designer.cs">
+      <DependentUpon>BnkViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ResourceViewers\FlashViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ResourceViewers\FlashViewer.designer.cs">
+      <DependentUpon>FlashViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ResourceViewers\PCKGViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ResourceViewers\PCKGViewer.Designer.cs">
+      <DependentUpon>PCKGViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FileFormats\BlockReaderStream.cs" />
+    <Compile Include="FileFormats\BlockWriterStream.cs" />
+    <Compile Include="FileFormats\Hashing\FNV32.cs" />
+    <Compile Include="FileFormats\Hashing\FNV64.cs" />
+    <Compile Include="Gibbed.IO\Endian.cs" />
+    <Compile Include="Gibbed.IO\NumberHelpers\Align.cs" />
+    <Compile Include="Gibbed.IO\NumberHelpers\BigEndian.cs" />
+    <Compile Include="Gibbed.IO\NumberHelpers\LittleEndian.cs" />
+    <Compile Include="Gibbed.IO\NumberHelpers\Padding.cs" />
+    <Compile Include="Gibbed.IO\NumberHelpers\RotateLeft.cs" />
+    <Compile Include="Gibbed.IO\NumberHelpers\RotateRight.cs" />
+    <Compile Include="Gibbed.IO\NumberHelpers\Swap.cs" />
+    <Compile Include="Gibbed.IO\PathHelper.cs" />
+    <Compile Include="Gibbed.IO\StreamHelpers.cs" />
+    <Compile Include="Gibbed.IO\StreamHelpers\Aligned.cs" />
+    <Compile Include="Gibbed.IO\StreamHelpers\Boolean.cs" />
+    <Compile Include="Gibbed.IO\StreamHelpers\Enum.cs" />
+    <Compile Include="Gibbed.IO\StreamHelpers\Guid.cs" />
+    <Compile Include="Gibbed.IO\StreamHelpers\Numbers\F32.cs" />
+    <Compile Include="Gibbed.IO\StreamHelpers\Numbers\F64.cs" />
+    <Compile Include="Gibbed.IO\StreamHelpers\Numbers\S08.cs" />
+    <Compile Include="Gibbed.IO\StreamHelpers\Numbers\S16.cs" />
+    <Compile Include="Gibbed.IO\StreamHelpers\Numbers\S32.cs" />
+    <Compile Include="Gibbed.IO\StreamHelpers\Numbers\S64.cs" />
+    <Compile Include="Gibbed.IO\StreamHelpers\Numbers\U08.cs" />
+    <Compile Include="Gibbed.IO\StreamHelpers\Numbers\U16.cs" />
+    <Compile Include="Gibbed.IO\StreamHelpers\Numbers\U32.cs" />
+    <Compile Include="Gibbed.IO\StreamHelpers\Numbers\U64.cs" />
+    <Compile Include="Gibbed.IO\StreamHelpers\Strings\Default.cs" />
+    <Compile Include="Gibbed.IO\StreamHelpers\Strings\Internal.cs" />
+    <Compile Include="Gibbed.IO\StreamHelpers\Strings\Supplied.cs" />
+    <Compile Include="Gibbed.IO\StreamHelpers\Structure.cs" />
+    <Compile Include="ImageBox\DefaultGifAnimator.cs" />
+    <Compile Include="ImageBox\GifAnimator.cs" />
+    <Compile Include="ImageBox\HighResolutionGifAnimator.cs" />
+    <Compile Include="ImageBox\ImageBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ImageBox\ImageBoxActionSources.cs" />
+    <Compile Include="ImageBox\ImageBoxBorderStyle.cs" />
+    <Compile Include="ImageBox\ImageBoxCancelEventArgs.cs" />
+    <Compile Include="ImageBox\ImageBoxGridDisplayMode.cs" />
+    <Compile Include="ImageBox\ImageBoxGridScale.cs" />
+    <Compile Include="ImageBox\ImageBoxMouseWheelMessageFilter.cs" />
+    <Compile Include="ImageBox\ImageBoxNativeMethods.cs" />
+    <Compile Include="ImageBox\ImageBoxScrollBarStyle.cs" />
+    <Compile Include="ImageBox\ImageBoxScrollProperties.cs" />
+    <Compile Include="ImageBox\ImageBoxSelectionMode.cs" />
+    <Compile Include="ImageBox\ImageBoxSizeMode.cs" />
+    <Compile Include="ImageBox\ImageBoxZoomActions.cs" />
+    <Compile Include="ImageBox\ImageBoxZoomEventArgs.cs" />
+    <Compile Include="ImageBox\ImageBoxZoomLevelCollection.cs" />
+    <Compile Include="ImageBox\ZoomLevelCollectionConverter.cs" />
+    <Compile Include="Extensions\Helpers.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="ResourceFormats\IResourceType.cs" />
+    <Compile Include="ResourceFormats\MemFileResource.cs" />
+    <Compile Include="ResourceFormats\ScriptData.cs" />
+    <Compile Include="ResourceFormats\ScriptResource.cs" />
+    <Compile Include="ResourceFormats\TableData.cs" />
+    <Compile Include="ResourceFormats\TableResource.cs" />
+    <Compile Include="ResourceFormats\TextureResource.cs" />
+    <Compile Include="ResourceFormats\XmlResource.cs" />
+    <Compile Include="ResourceFormats\XmlResource0.cs" />
+    <Compile Include="ResourceFormats\XmlResource1.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResourceViewers\HashViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ResourceViewers\HashViewer.Designer.cs">
+      <DependentUpon>HashViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ResourceViewers\IResourceViewer.cs" />
+    <Compile Include="ResourceViewers\MemFileViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ResourceViewers\MemFileViewer.Designer.cs">
+      <DependentUpon>MemFileViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ResourceViewers\RawViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ResourceViewers\RawViewer.Designer.cs">
+      <DependentUpon>RawViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ResourceViewers\ResourceViewerFactory.cs" />
+    <Compile Include="ResourceViewers\ScriptViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ResourceViewers\ScriptViewer.Designer.cs">
+      <DependentUpon>ScriptViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ResourceViewers\TableViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ResourceViewers\TableViewer.Designer.cs">
+      <DependentUpon>TableViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ResourceViewers\TextureViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ResourceViewers\TextureViewer.Designer.cs">
+      <DependentUpon>TextureViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ResourceViewers\XmlViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ResourceViewers\XmlViewer.Designer.cs">
+      <DependentUpon>XmlViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ScintillaNET\Annotation.cs" />
+    <Compile Include="ScintillaNET\AutoCSelectionEventArgs.cs" />
+    <Compile Include="ScintillaNET\AutomaticFold.cs" />
+    <Compile Include="ScintillaNET\BeforeModificationEventArgs.cs" />
+    <Compile Include="ScintillaNET\CaretStyle.cs" />
+    <Compile Include="ScintillaNET\ChangeAnnotationEventArgs.cs" />
+    <Compile Include="ScintillaNET\CharAddedEventArgs.cs" />
+    <Compile Include="ScintillaNET\Command.cs" />
+    <Compile Include="ScintillaNET\CopyFormat.cs" />
+    <Compile Include="ScintillaNET\Document.cs" />
+    <Compile Include="ScintillaNET\DoubleClickEventArgs.cs" />
+    <Compile Include="ScintillaNET\DwellEventArgs.cs" />
+    <Compile Include="ScintillaNET\EdgeMode.cs" />
+    <Compile Include="ScintillaNET\Eol.cs" />
+    <Compile Include="ScintillaNET\FlagsEnumConverter.cs" />
+    <Compile Include="ScintillaNET\FoldAction.cs" />
+    <Compile Include="ScintillaNET\FoldDisplayText.cs" />
+    <Compile Include="ScintillaNET\FoldFlags.cs" />
+    <Compile Include="ScintillaNET\FoldLevelFlags.cs" />
+    <Compile Include="ScintillaNET\FontQuality.cs" />
+    <Compile Include="ScintillaNET\GapBuffer.cs" />
+    <Compile Include="ScintillaNET\Helpers.cs" />
+    <Compile Include="ScintillaNET\HotspotClickEventArgs.cs" />
+    <Compile Include="ScintillaNET\IdleStyling.cs" />
+    <Compile Include="ScintillaNET\ILoader.cs" />
+    <Compile Include="ScintillaNET\IndentView.cs" />
+    <Compile Include="ScintillaNET\Indicator.cs" />
+    <Compile Include="ScintillaNET\IndicatorClickEventArgs.cs" />
+    <Compile Include="ScintillaNET\IndicatorCollection.cs" />
+    <Compile Include="ScintillaNET\IndicatorFlags.cs" />
+    <Compile Include="ScintillaNET\IndicatorReleaseEventArgs.cs" />
+    <Compile Include="ScintillaNET\IndicatorStyle.cs" />
+    <Compile Include="ScintillaNET\InsertCheckEventArgs.cs" />
+    <Compile Include="ScintillaNET\Lexer.cs" />
+    <Compile Include="ScintillaNET\Line.cs" />
+    <Compile Include="ScintillaNET\LineCollection.cs" />
+    <Compile Include="ScintillaNET\LineEndType.cs" />
+    <Compile Include="ScintillaNET\ListCompletionMethod.cs" />
+    <Compile Include="ScintillaNET\Loader.cs" />
+    <Compile Include="ScintillaNET\Margin.cs" />
+    <Compile Include="ScintillaNET\MarginClickEventArgs.cs" />
+    <Compile Include="ScintillaNET\MarginCollection.cs" />
+    <Compile Include="ScintillaNET\MarginCursor.cs" />
+    <Compile Include="ScintillaNET\MarginOptions.cs" />
+    <Compile Include="ScintillaNET\MarginType.cs" />
+    <Compile Include="ScintillaNET\Marker.cs" />
+    <Compile Include="ScintillaNET\MarkerCollection.cs" />
+    <Compile Include="ScintillaNET\MarkerHandle.cs" />
+    <Compile Include="ScintillaNET\MarkerSymbol.cs" />
+    <Compile Include="ScintillaNET\ModificationEventArgs.cs" />
+    <Compile Include="ScintillaNET\ModificationSource.cs" />
+    <Compile Include="ScintillaNET\MultiPaste.cs" />
+    <Compile Include="ScintillaNET\NativeMemoryStream.cs" />
+    <Compile Include="ScintillaNET\NativeMethods.cs" />
+    <Compile Include="ScintillaNET\NeedShownEventArgs.cs" />
+    <Compile Include="ScintillaNET\Order.cs" />
+    <Compile Include="ScintillaNET\Phases.cs" />
+    <Compile Include="ScintillaNET\PopupMode.cs" />
+    <Compile Include="ScintillaNET\ProjectionEqualityComparer.cs" />
+    <Compile Include="ScintillaNET\PropertyType.cs" />
+    <Compile Include="ScintillaNET\Scintilla.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ScintillaNET\ScintillaReader.cs" />
+    <Compile Include="ScintillaNET\SCNotificationEventArgs.cs" />
+    <Compile Include="ScintillaNET\SearchFlags.cs" />
+    <Compile Include="ScintillaNET\Selection.cs" />
+    <Compile Include="ScintillaNET\SelectionCollection.cs" />
+    <Compile Include="ScintillaNET\Status.cs" />
+    <Compile Include="ScintillaNET\Style.cs" />
+    <Compile Include="ScintillaNET\StyleCase.cs" />
+    <Compile Include="ScintillaNET\StyleCollection.cs" />
+    <Compile Include="ScintillaNET\StyleNeededEventArgs.cs" />
+    <Compile Include="ScintillaNET\TabDrawMode.cs" />
+    <Compile Include="ScintillaNET\Technology.cs" />
+    <Compile Include="ScintillaNET\Tuple.cs" />
+    <Compile Include="ScintillaNET\UpdateChange.cs" />
+    <Compile Include="ScintillaNET\UpdateUIEventArgs.cs" />
+    <Compile Include="ScintillaNET\VirtualSpace.cs" />
+    <Compile Include="ScintillaNET\WhitespaceMode.cs" />
+    <Compile Include="ScintillaNET\WrapIndentMode.cs" />
+    <Compile Include="ScintillaNET\WrapMode.cs" />
+    <Compile Include="ScintillaNET\WrapVisualFlagLocation.cs" />
+    <Compile Include="ScintillaNET\WrapVisualFlags.cs" />
+    <Compile Include="Extensions\MaterialLibrary.cs" />
+    <Compile Include="Extensions\Texture.cs" />
+    <Compile Include="zlibnet\Helpers.cs" />
+    <Compile Include="zlibnet\StringHelper.cs" />
+    <Compile Include="zlibnet\zlib\CrcStream.cs" />
+    <Compile Include="zlibnet\zlib\ZLib.cs" />
+    <Compile Include="zlibnet\zlib\ZLibCompressors.cs" />
+    <Compile Include="zlibnet\zlib\ZLibStreams.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="About.resx">
+      <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ArchiveViewer.resx">
+      <DependentUpon>ArchiveViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Be.Windows.Forms\HexBox.resx">
+      <DependentUpon>HexBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagedBass\PlayerControl.resx">
+      <DependentUpon>PlayerControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResourceViewers\BnkViewer.resx">
+      <DependentUpon>BnkViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResourceViewers\FlashViewer.resx">
+      <DependentUpon>FlashViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResourceViewers\PCKGViewer.resx">
+      <DependentUpon>PCKGViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResourceViewers\HashViewer.resx">
+      <DependentUpon>HashViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResourceViewers\MemFileViewer.resx">
+      <DependentUpon>MemFileViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResourceViewers\RawViewer.resx">
+      <DependentUpon>RawViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResourceViewers\ScriptViewer.resx">
+      <DependentUpon>ScriptViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResourceViewers\TableViewer.resx">
+      <DependentUpon>TableViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResourceViewers\TextureViewer.resx">
+      <DependentUpon>TextureViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResourceViewers\XmlViewer.resx">
+      <DependentUpon>XmlViewer.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="programm.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
+  <ProjectExtensions>
+    <VisualStudio AllowExistingFolder="true" />
+  </ProjectExtensions>
+</Project>
