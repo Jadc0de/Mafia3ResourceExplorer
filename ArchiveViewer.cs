@@ -704,7 +704,7 @@ namespace ResourceExplorer
                             {
                                 resource.Deserialize(ResourceEntrys[i].Version, data, _Archive.Endian);
                             }
-                            string path = pathType + resource.Name.Replace("/", "\\");
+                            string path = pathType + resource.Path.Replace("/", "\\");
                             if (!Directory.Exists(Path.GetDirectoryName(path)))
                             {
                                 Directory.CreateDirectory(Path.GetDirectoryName(path));
