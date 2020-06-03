@@ -1,1 +1,1 @@
-# Mafia III Resource Explorer :c
+# Mafia III Resource Explorer
